@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <title>Menu</title>
+    
+    <style>
+        
+        .header {
+            display: flex;
+            justify-content: right;
+            position: relative;
+            padding: 10px;
+        }
+
+        .image {
+            width: 200px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            border: 3px solid darkgreen; /* Border pro položky menu */
+            border-radius: 20px; /* Zakulacené rohy pro položky menu */
+            background-color: lightgreen;
+        }
+
+        .menu ul li {
+            margin-right: 20px;
+            
+            padding: 10px; /* Odstup mezi textem a okrajem pro položky menu */
+        }
+
+        .access-denied-message {
+            text-align: center;
+            background-color: #FF0000;
+            color: #FFF;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Obrázek" class="image">
+    <div class="header">
+        <div class="menu">
+            <ul>
+                <li><a href="#">Uživatelská práva</a></li>
+                <li><a href="#">Registrace vozidla</a></li>
+                <li><a href="#">Moje vozidla</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li><a href="#">Technická kontrola</a></li>
+                <li><a href="#">Servis</a></li>
+                <li><a href="#">Likvidace vraku</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Simulace informace o roli uživatele (můžete to načíst ze svého systému)
+        var userIsAdmin = false; // Změňte na true, pokud je uživatel admin
+
+        // Vyberte všechny položky s třídou "menu"
+        var menuItems = document.querySelectorAll(".header .menu li");
+
+        // Pokud je uživatel admin, zobrazíme položky
+        if (userIsAdmin) {
+            for (var i = 0; i < menuItems.length; i++) {
+                menuItems[i].style.display = "list-item";
+            }
+        } else {
+            // Pokud uživatel není admin, skryjeme položky
+            for (var i = 0; i < menuItems.length; i++) {
+                if (i === 2 || i === 4) {
+                    menuItems[i].style.display = "list-item";
+                }else {
+                menuItems[i].style.display = "none";
+            }}
+        }
+    </script>
+
+
+
+    
+    <div class="content">
+        <center>
+            <h1>Vítejte na našem webu</h1>
+            <p>Toto je střední text na naší stránce.</p>
+        </center>
+    </div>
+<script>
+    // Simulace hodnoty current_user (můžete to načítat ze svého systému)
+    var current_user = 3; // Změňte na hodnotu current_user podle vašich potřeb
+
+    // Pole s povolenými hodnotami
+    var allowed_values = [1, 2, 3];
+
+    // Zkontrolujte, zda current_user je v poli povolených hodnot
+    if (allowed_values.includes(current_user)) {
+        // Pokud je current_user v pořádku, nebudeme dělat nic
+    } else {
+        // Pokud current_user není v pořádku, zablokujeme stránku a zobrazíme zprávu
+        document.body.innerHTML = '<div class="access-denied-message"><h1>Nedovolený přístup</h1></div>';
+    }
+</script>
+
+
+</body>
+</html>

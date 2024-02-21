@@ -1,0 +1,19 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+<body class="body_p">
+    <div class="input-container_p">
+        <form class="form-container_p" method="POST" action="/">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Obrázek" class="image_p">
+            <div>
+                <label class="label_p" for="jmeno">Jméno</label>
+                <input type="text" id="jmeno" name="jmeno" class="rounded-input_p"><br><br>
+                <label class="label_p" for="heslo">Heslo</label>
+                <input type="password" id="heslo" name="heslo" class="rounded-input_p"><br><br>
+                <input type="submit" value="Přihlásit se" class="rounded-button_p"><br><br>
+                <a href="registrace" class="register-link_p">Zaregistrujte se</a>
+            </div>
+        </form>
+    </div>    
+</body>
+{% endblock %}

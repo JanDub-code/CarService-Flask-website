@@ -1,0 +1,93 @@
+{% extends '__main.jinja' %}
+
+    
+
+{% block content %}
+<body>
+
+    <div class="full_calendar">
+    
+    {% include '__menu.jinja' %}
+    
+    <div class="content_stav">
+    <div class="prehled_kalendare">
+
+        <table>
+            <tr>
+                <td></td>
+                <td>Nezahájeno</td>
+                <td>V procesu</td>
+                <td>Dokončeno</td>
+            </tr>
+            {% if 'user_id' in session and session['role_id'] in [1, 3] %} 
+            <tr>
+                <td>Servis</td>
+                <td>{{ pocty_operaci['neprovedeno']['Servis'] }}</td>
+                <td>{{ pocty_operaci['v_procesu']['Servis'] }}</td>
+                <td>{{ pocty_operaci['provedeno']['Servis'] }}</td>
+            </tr>
+            {% endif %}
+            {% if 'user_id' in session and session['role_id'] in [1, 4] %} 
+            <tr>
+                <td>Likvidace</td>
+                <td>{{ pocty_operaci['neprovedeno']['Likvidace'] }}</td>
+                <td>{{ pocty_operaci['v_procesu']['Likvidace'] }}</td>
+                <td>{{ pocty_operaci['provedeno']['Likvidace'] }}</td>
+            </tr>
+            {% endif %}
+            {% if 'user_id' in session and session['role_id'] in [1, 2] %} 
+            <tr>
+                <td>Technická kontrola</td>
+                <td>{{ pocty_operaci['neprovedeno']['Technická kontrola'] }}</td>
+                <td>{{ pocty_operaci['v_procesu']['Technická kontrola'] }}</td>
+                <td>{{ pocty_operaci['provedeno']['Technická kontrola'] }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+    <div class="filtr_vypisu">
+        
+        <center>
+        <h1>Filtruj výpis</h1>
+        </center>
+        
+            <form id="form2" action="{{ url_for('zpravy_statistiky.filtruj') }}" method="POST">
+        
+       Začátek:
+       <input type="date" id="vypis_zacatek" name="vypis_zacatek" class="vypis_zacatek"><br>
+       
+       Konec:
+       <input type="date" id="vypis_konec" name="vypis_konec" class="vypis_konec"><br>
+            <input class="form2-button green-button" type="submit" value="Filtruj výpis">
+        </form>
+        
+    </div>
+
+    <div class="prvni_tabulka">
+    <h2 style="text-align: center">Filtrovaný výpis</h2>
+        <table>
+            <tr>
+                <th>Uzivatel</th>
+                <th>Stav</th>
+                <th>Typ</th>
+                <th>Vozidlo</th>
+                <th>Datum</th>
+            </tr>
+
+            {% for operace in filtrace %}
+                <tr>
+                    <td>{{ operace.user.username }}</td>
+                    <td>{{ operace.stav }}</td>
+                    <td>{{ operace.druh_sluzby.nazev }}</td>
+                    <td>{{ operace.vozidlo.nazev_vozidla }}</td>
+                    <td>{{ operace.datum }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    </div>
+
+    </div>
+    
+{% endblock %}

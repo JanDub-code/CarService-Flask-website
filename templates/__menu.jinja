@@ -1,0 +1,28 @@
+<img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Obrázek" class="image">
+
+<div class="header">
+    <div class="menu">
+        <ul>
+            {% if 'role_id' in session and session['role_id'] == 1 %}
+                <li><a href="{{ url_for('sprava_uzivatele.sprava_uzivatelu') }}">Správa uživatelů</a></li>
+            {% endif %}
+
+            {% if 'role_id' in session and session['role_id'] in [8, 6, 7, 5, 1] %}
+                <li><a href="{{ url_for('sprava_vozidel.spravaVozidel') }}">Správa vozidel</a></li>
+            {% endif %}
+
+            {% if 'role_id' in session and session['role_id'] in [8, 1] %}
+                <li><a href="{{ url_for('planovani_kalendar.planovani_A_kalendar') }}">Plánování a kalendar</a></li>
+            {% endif %}
+
+            {% if 'role_id' in session and session['role_id'] in [8, 1, 6, 7, 5, 3, 4, 2] %}
+                <li><a href="{{ url_for('stav.stav_uzivatele') }}">Sledování stavu</a></li>
+            {% endif %}
+
+            {% if 'role_id' in session and session['role_id'] in [1, 3, 4, 2] %}
+                <li><a href="{{ url_for('zpravy_statistiky.statistiky') }}">Zprávy a statistiky</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('odhlaseni.odhlas') }}">Odhlásit</a></li>
+        </ul>
+    </div>
+</div>

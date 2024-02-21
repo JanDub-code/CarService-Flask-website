@@ -1,0 +1,45 @@
+{% extends '__main.jinja' %}
+
+    
+
+{% block content %}
+    <div class="full_calendar">
+    {% include '__menu.jinja' %}
+    <div class="content">
+    <span class="main-border">
+    <div class="form-container">
+        <form id="form1" method="POST" action="{{ url_for('planovani_kalendar.pridani') }}">
+            <label for="datum">Vyber datum:</label>
+            <input type="date" id="datum" name="datum" class="border"><br>
+            
+            <label for="sluzba">Vyber službu:</label>
+            <select id="sluzba" name="sluzba" class="select_sluzba">
+                {% for druh_sluzby in druhy_sluzeb %}
+                <option value="{{ druh_sluzby.id_druhu_sluzby }}">{{ druh_sluzby.nazev }}</option>
+                {% endfor %}
+            </select><br>
+            
+            <label for="vozidlo">Vyber vozidlo:</label>
+                <select id="vozidlo" name="vozidlo" class="select_vozidlo">
+                    {% for auto in vozidla %}
+                        <option value="{{ auto.id_vozidla }}">{{ auto.nazev_vozidla }} | SPZ : {{ auto.spz }}</option>
+                    {% endfor %}
+                </select><br>
+            
+            <br>
+
+            <input class="form1-button green-button" type="submit" name="pridej" value="Přidej novou operaci"><br>
+        </form>
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    </span>
+    </div>
+    
+    </div>
+{% endblock %}

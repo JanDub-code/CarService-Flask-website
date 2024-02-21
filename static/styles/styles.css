@@ -1,0 +1,459 @@
+
+/* menu */
+               .header {
+            /*display: flex;*/
+            justify-content: right;
+            position: relative;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+ 
+        .image {
+            width: 200px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+ 
+        .menu ul {
+            list-style: none;
+            /*display: flex;*/
+            margin: 0;
+            padding: 0;
+            border: 2px solid darkgreen;
+            border-radius: 20px; 
+            background-color: lightgreen;
+            }
+ 
+        .menu ul li {
+            margin-right: 20px;
+            padding: 10px; 
+        }
+        
+        @media screen and (min-width: 800px) {
+            .menu {
+                width: 80%; 
+                margin: auto;
+            }
+        
+            .menu ul {
+                list-style-type: none;
+                padding: 0;
+                text-align: center;
+            }
+        
+            .menu ul li {
+                margin-right: 20px;
+                padding: 10px; 
+                display: inline-block;
+            }
+        }
+        
+        /* kalendar*/
+        
+        
+        .content {
+        width: 50%;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 20px; 
+        }
+        
+    .full_calendar{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #bdbdbd;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}  
+  
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            /*background-color: #bdbdbd; */
+            
+        }
+  
+        form {
+            text-align: center;
+        }
+        .pridej_vozidlo_form,
+        .filtr_vypisu,
+        .form-container,
+        .prehled_kalendare{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: lightgreen;
+            border-radius: 20px;
+            margin-bottom: 30px; 
+            border: 2px solid darkgreen;
+        }
+        /*
+               .prehled_kalendare{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            border: 2px solid darkgreen;
+            border-radius: 20px; 
+            background-color: white;
+        }
+        */
+        /*
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid darkgreen;
+            background-color: white;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        */
+        .form1-button {
+            margin-bottom: 20px; 
+        }
+        .form2-button {
+            margin-bottom: 20px; 
+        }
+        .spacer {
+            margin: 20px 0;
+        }
+       
+        .green-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px; 
+        }
+        
+        .border {
+            border: 2px solid green;
+            border-radius: 20px; 
+            padding: 5px;
+            margin: 10px
+        }
+       
+        .select_sluzba {
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 20px; 
+            padding: 5px;
+        }
+       
+        
+        /* sprava uzivatelu */
+        
+        .content_sprava_uz {
+            width: 500px;
+            margin: 0 auto;
+             border: 2px solid green;
+            padding: 5px;
+          border-radius: 20px; 
+          justify-content: center;
+          align-items: center;  
+          background-color: lightgreen;
+          margin-bottom: 5%; 
+          
+      }
+      
+      .full_sprava_uzivatelu{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #bdbdbd;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}  
+
+
+      
+
+        .vstup {
+            border-radius: 20px;
+        }
+        
+        table {
+            border-collapse: separate;
+            border-spacing: 10px; 
+        }
+        th, td {
+            padding: 10px; 
+            text-align: center;
+            
+        }
+        th {
+            /*color: green;
+            border: 2px solid green;*/
+            border-radius: 20px;
+        }
+  
+        .uziv_button {
+            background-color: green;
+            border: 2px solid green;
+            border-radius: 20px; 
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px; 
+        }
+        
+        /* správa vozidel */
+        
+  
+    .full_sprava_vozidel{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #bdbdbd;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}  
+
+        .content_sprava_vozidel {
+        width: 900px;
+        margin: 0 auto;
+        background-color:white;
+        margin-bottom: 10%;
+  }
+  
+  .uprav_button {
+    background-color: green; 
+  }
+  
+  .nazev_input,
+  select {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    margin-bottom: 30px;
+  }
+
+  .label {
+    display: block;
+    text-align: center;
+    margin: 10px;
+  }
+
+  .label-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .zaznamy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pridej_vozidlo,
+  .pridej_button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vstup_vozidlo {
+    width: 50%;
+    margin: 1% auto 0;
+    border: 2px solid green;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin-bottom: 50px;
+  }
+
+  .vstup_vozidlo input {
+    margin-bottom: 10px; 
+  }
+
+  .pridej_button {
+    align-self: center; 
+  }
+  
+  .label-group1,
+  .label-group2,
+  .label-group3{
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid green;
+    padding: 5px;
+    border-radius: 20px; 
+    margin: 5%;
+    
+  }
+  
+  /* stav  */
+  
+    .content_stav {
+width: 700px;
+margin: 0 auto;
+/*border: 2px solid green;*/
+padding: 5px;
+border-radius: 20px; 
+justify-content: center;
+align-items: center;   
+flex:1;
+background-color:#bdbdbd;  
+    }
+    
+        .full_stav{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #bdbdbd;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}  
+    
+    
+    .prvni_tabulka{
+      background-color: lightgreen;
+      border-radius: 20px; 
+      margin-bottom: 30px;
+      border: 2px solid green;
+    }
+    
+    .druha_tabulka{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: lightgreen;
+      border-radius: 20px;
+      margin-bottom: 30px; 
+      border: 2px solid green;
+      /*justify-content: center;*/
+        }
+        
+    .filtruj_sluzby_button,
+    .najdi_uzivatele_button{
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px; 
+        margin-bottom: 30px; 
+    }
+    
+    /* statistiky */
+    
+    
+    .content_statistiky {
+width: 500px;
+margin: 0 auto;
+/*border: 5px solid green;*/
+padding: 5px;
+border-radius: 20px; 
+justify-content: center;
+align-items: center; 
+background-color:lightgreen;
+border: 2px solid green;
+margin-bottom: 30%;  
+margin-top: 200px;   
+        }
+        
+        .full_statistiky{
+width: 1000px;
+margin: 0 auto;
+background-color: #bdbdbd;
+justify-content: center;
+align-items: center;
+flex:1;
+}  
+        
+        /* uvod */      
+        
+.content_uvod {
+width: 980px;
+margin: 0 auto;
+margin-top: 80px;
+margin-bottom: 10%;
+padding: 10px;
+border-radius: 20px;
+justify-content: center;
+
+align-items: center;
+background-color: lightgreen;
+  }
+  
+  .full_uvod{
+width: 1000px;
+margin: 0 auto;
+background-color: white;
+justify-content: center;
+align-items: center;
+}  
+  
+
+  /* ZDE SE NACHÁZÍ STYLES PRO PŘIHLÁŠENÍ A REGISTRACE */
+
+  .body_p {
+    background-image: url('/static/images/background1.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.input-container_p {
+    text-align: center;
+    border: 2px solid green; 
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+}
+.rounded-button_p {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.label_p {
+    font-size: 16px;
+    margin-bottom: 10px; 
+}
+.rounded-input_p {
+    border: 1px solid green; 
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+.image_p {
+    width: 200px;
+    vertical-align: middle;
+}
+.form-container_p {
+    display: flex;
+    align-items: center;
+}
+.register-link_p {
+    color: green;
+    text-decoration: none; 
+}

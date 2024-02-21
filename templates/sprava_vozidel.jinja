@@ -1,0 +1,98 @@
+{% extends '__main.jinja' %}
+
+    
+
+{% block content %}
+
+<body>
+
+<div class="full_sprava_vozidel">
+  {% include '__menu.jinja' %}
+ {% if 'user_id' in session and session['role_id'] in [1, 8] %} 
+<div class="vstup_vozidlo">
+  <h2>Přidávání vozidel</h2>
+  <form class="pridej-vozidlo" method="POST" action="/sprava_vozidel.zmena_vozidla">
+  {% if 'user_id' in session and session['role_id'] in [1] %} 
+  Uzivatel:
+    <input type="text" id="uzivatel" class="nazev_input" name="uzivatel"><br>
+  {% endif %}
+    Název:
+    <input type="text" id="nazev" class="nazev_input" name="nazev"><br>
+    SPZ:
+    <input type="text" id="SPZ" class="nazev_input" name="spz"><br>
+    <input class="form1-button green-button" type="submit" name="pridej_nove_vozidlo" value="Přidej nové vozidlo">
+  </form>
+</div>
+
+<div class="vstup_vozidlo seznam">
+  <h2>Všechna registrovaná auta :</h2>
+  <form class="pridej-vozidlo" method="POST" action="/zobrazit">
+      {% for auto in vozidla %}
+        <p>Vozidlo: {{ auto.nazev_vozidla }} | SPZ : {{ auto.spz }}</p>
+      {% endfor %}
+  </form>
+</div>
+
+
+
+<div class="vstup_vozidlo odstranit">
+  <h2>Odstranění vozidla</h2>
+  <form class="pridej-vozidlo" method="POST" action="/sprava_vozidel.zmena_vozidla">
+  {% if 'user_id' in session and session['role_id'] in [1] %} 
+  SPZ:
+    <input type="text" id="spz_od" class="nazev_input" name="spz_od"><br>
+  {% endif %}
+    Název vozidla k odstranění:
+    <input type="text" id="nazev_odstranit" class="nazev_input" name="nazev_odstranit"><br>
+    <input class="form1-button green-button" type="submit" name="odstranit_vozidlo" value="Odstraň vozidlo">
+  </form>
+</div>
+{% endif %}
+<div class="content_stav">
+{% if 'user_id' in session and session['role_id'] in [1, 6, 7, 5] %}
+    <div class="prvni_tabulka">
+    <h2 style="text-align: center">Aktuální operace na autech</h2>
+<table>
+    <tr>
+        <th>Uzivatel</th>
+        <th>Stav</th>
+        <th>Typ</th>
+        <th>Vozidlo</th>
+        <th>Datum</th>
+        <th>ID</th>  
+    </tr>
+
+    {% for operace in operace %}
+        <tr>
+            <td>{{ operace.user.username }}</td>
+            <td>
+                {{ operace.stav }}
+                <form method="POST" action="{{ url_for('sprava_vozidel.zmena_stavu') }}" style="display: inline;">
+                    <input type="hidden" name="id_sluzby" value="{{ operace.id_sluzby }}">
+                    <select name="novy_stav">
+                        <option value="neprovedeno" {% if operace.stav == 'neprovedeno' %}selected{% endif %}>Neprovedeno</option>
+                        <option value="provedeno" {% if operace.stav == 'provedeno' %}selected{% endif %}>Provedeno</option>
+                        <option value="v_procesu" {% if operace.stav == 'v_procesu' %}selected{% endif %}>V procesu</option>
+                    </select>
+                    <input type="submit" value="Uložit">
+                </form>
+            </td>
+            <td>{{ operace.druh_sluzby.nazev }}</td>
+            <td>{{ operace.vozidlo.nazev_vozidla }}</td>
+            <td>{{ operace.datum }}</td>
+            <td>{{ operace.id_sluzby}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+    {% endif %}
+
+
+</div>
+</div>
+
+</div>
+</body>
+{% endblock %}

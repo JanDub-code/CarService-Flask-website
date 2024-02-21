@@ -1,0 +1,23 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+<body class="body_p">
+    <div class="input-container_p">
+        <form class="form-container_p" method="POST" action="/registrace">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Obrázek" class="image_p">
+            <div>
+                <label class="label_p" for="jmeno">Jméno</label>
+                <input type="text" id="jmeno" class="rounded-input_p" name="jmeno"><br><br>
+                <label class="label_p" for="email">Email</label>
+                <input type="email" id="email" class="rounded-input_p" name="email"><br><br>
+                <label class="label_p" for="telefon">Telefon</label>
+                <input type="tel" id="telefon" class="rounded-input_p" name="telefon"><br><br>
+                <label class="label_p" for="heslo">Heslo</label>
+                <input type="password" id="heslo" class="rounded-input_p" name="heslo"><br><br>
+                <input type="submit" value="Zaregistrovat se" class="rounded-button_p"><br><br>
+                <a href="/" class="register-link_p">Přihlášení</a>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}
