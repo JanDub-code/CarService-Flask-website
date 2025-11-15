@@ -21,5 +21,5 @@ app.register_blueprint(stav_blueprint.stav,url_prefix='/')
 if __name__ == '__main__':
     with app.app_context():
         models.initialize_db(app)
-    app.run(debug=True)
+    app.run()
    
