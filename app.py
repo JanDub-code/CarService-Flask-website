@@ -17,9 +17,9 @@ app.register_blueprint(zpravy_statistiky_blueprint.zpravy_statistiky,url_prefix=
 app.register_blueprint(odhlaseni_blueprint.odhlaseni,url_prefix='/')
 app.register_blueprint(stav_blueprint.stav,url_prefix='/')
 
-
+with app.app_context():
+    models.initialize_db(app)
+    
 if __name__ == '__main__':
-    with app.app_context():
-        models.initialize_db(app)
     app.run()
    
