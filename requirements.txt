@@ -3,7 +3,6 @@ Flask-Migrate==4.0.5
 Flask-SQLAlchemy==3.1.1
 SQLAlchemy==2.0.40
 Werkzeug==3.1.4
-Flask-WTF==0.15.1
-WTForms==2.3.3
+Flask-WTF==1.2.2
+WTForms==3.2.1
 gunicorn==23.0.0
-
