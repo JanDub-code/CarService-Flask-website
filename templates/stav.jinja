@@ -1,165 +1,187 @@
 {% extends '__main.jinja' %}
 
 {% block content %}
-<body>
-    
-    <div class="full_stav">
     {% include '__menu.jinja' %}
-    
-    <div class="content_stav">
-    {% if 'user_id' in session and session['role_id'] in [8] %}
-        <div class="prvni_tabulka">
-    <h2 style="text-align: center">Osobní stavy </h2>
-        <table>
-            <tr>
-                <th>Uzivatel</th>
-                <th>Stav</th>
-                <th>Typ</th>
-                <th>Vozidlo</th>
-                <th>Datum</th>
-            </tr>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Sledování stavu</h1>
+        </div>
 
-            {% for operace in operace6 %}
-                <tr>
-                    <td>{{ operace.user.username }}</td>
-                    <td>{{ operace.stav }}</td>
-                    <td>{{ operace.druh_sluzby.nazev }}</td>
-                    <td>{{ operace.vozidlo.nazev_vozidla }}</td>
-                    <td>{{ operace.datum }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
+        {% if 'user_id' in session and session['role_id'] in [8] %}
+        <div class="page-header">
+            <h2 class="page-title">Osobní stavy</h2>
+        </div>
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Uživatel</th>
+                        <th>Stav</th>
+                        <th>Typ</th>
+                        <th>Vozidlo</th>
+                        <th>Datum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for operace in operace6 %}
+                        <tr>
+                            <td>{{ operace.user.username }}</td>
+                            <td>{{ operace.stav }}</td>
+                            <td>{{ operace.druh_sluzby.nazev }}</td>
+                            <td>{{ operace.vozidlo.nazev_vozidla }}</td>
+                            <td>{{ operace.datum }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
         {% endif %}
 
-
         {% if 'user_id' in session and session['role_id'] in [1, 6, 7, 5, 2, 3, 4] %}
-    <div class="prvni_tabulka">
-    <h2 style="text-align: center">Nedokončené před termínem</h2>
-        <table>
-            <tr>
-                <th>Uzivatel</th>
-                <th>Stav</th>
-                <th>Typ</th>
-                <th>Vozidlo</th>
-                <th>Datum</th>
-            </tr>
+            <!-- Nedokončené před termínem -->
+            <div class="page-header" style="margin-top: 2rem;">
+                <h2 class="page-title">Nedokončené před termínem</h2>
+            </div>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Uživatel</th>
+                            <th>Stav</th>
+                            <th>Typ</th>
+                            <th>Vozidlo</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for operace in operace1 %}
+                            <tr>
+                                <td>{{ operace.user.username }}</td>
+                                <td>{{ operace.stav }}</td>
+                                <td>{{ operace.druh_sluzby.nazev }}</td>
+                                <td>{{ operace.vozidlo.nazev_vozidla }}</td>
+                                <td>{{ operace.datum }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 
-            {% for operace in operace1 %}
-                <tr>
-                    <td>{{ operace.user.username }}</td>
-                    <td>{{ operace.stav }}</td>
-                    <td>{{ operace.druh_sluzby.nazev }}</td>
-                    <td>{{ operace.vozidlo.nazev_vozidla }}</td>
-                    <td>{{ operace.datum }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
+            <!-- Nedokončené po termínu -->
+            <div class="page-header" style="margin-top: 2rem;">
+                <h2 class="page-title">Nedokončené po termínu</h2>
+            </div>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Uživatel</th>
+                            <th>Stav</th>
+                            <th>Typ</th>
+                            <th>Vozidlo</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for operace in operace2 %}
+                            <tr>
+                                <td>{{ operace.user.username }}</td>
+                                <td>{{ operace.stav }}</td>
+                                <td>{{ operace.druh_sluzby.nazev }}</td>
+                                <td>{{ operace.vozidlo.nazev_vozidla }}</td>
+                                <td>{{ operace.datum }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 
-    <div class="prvni_tabulka">
-    <h2 style="text-align: center">Nedokončené po termínu</h2>
-        <table>
-            <tr>
-                <th>Uzivatel</th>
-                <th>Stav</th>
-                <th>Typ</th>
-                <th>Vozidlo</th>
-                <th>Datum</th>
-            </tr>
+            <!-- V průběhu -->
+            <div class="page-header" style="margin-top: 2rem;">
+                <h2 class="page-title">V průběhu</h2>
+            </div>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Uživatel</th>
+                            <th>Stav</th>
+                            <th>Typ</th>
+                            <th>Vozidlo</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for operace in operace3 %}
+                            <tr>
+                                <td>{{ operace.user.username }}</td>
+                                <td>{{ operace.stav }}</td>
+                                <td>{{ operace.druh_sluzby.nazev }}</td>
+                                <td>{{ operace.vozidlo.nazev_vozidla }}</td>
+                                <td>{{ operace.datum }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 
-            {% for operace in operace2 %}
-                <tr>
-                    <td>{{ operace.user.username }}</td>
-                    <td>{{ operace.stav }}</td>
-                    <td>{{ operace.druh_sluzby.nazev }}</td>
-                    <td>{{ operace.vozidlo.nazev_vozidla }}</td>
-                    <td>{{ operace.datum }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
+            <!-- Dokončené po termínu -->
+            <div class="page-header" style="margin-top: 2rem;">
+                <h2 class="page-title">Dokončené po termínu</h2>
+            </div>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Uživatel</th>
+                            <th>Stav</th>
+                            <th>Typ</th>
+                            <th>Vozidlo</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for operace in operace4 %}
+                            <tr>
+                                <td>{{ operace.user.username }}</td>
+                                <td>{{ operace.stav }}</td>
+                                <td>{{ operace.druh_sluzby.nazev }}</td>
+                                <td>{{ operace.vozidlo.nazev_vozidla }}</td>
+                                <td>{{ operace.datum }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 
-    <div class="prvni_tabulka">
-    <h2 style="text-align: center">V průběhu</h2>
-        <table>
-            <tr>
-                <th>Uzivatel</th>
-                <th>Stav</th>
-                <th>Typ</th>
-                <th>Vozidlo</th>
-                <th>Datum</th>
-            </tr>
-
-            {% for operace in operace3 %}
-                <tr>
-                    <td>{{ operace.user.username }}</td>
-                    <td>{{ operace.stav }}</td>
-                    <td>{{ operace.druh_sluzby.nazev }}</td>
-                    <td>{{ operace.vozidlo.nazev_vozidla }}</td>
-                    <td>{{ operace.datum }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
-
-    <div class="prvni_tabulka">
-    <h2 style="text-align: center">Dokončené po termínu</h2>
-        <table>
-            <tr>
-                <th>Uzivatel</th>
-                <th>Stav</th>
-                <th>Typ</th>
-                <th>Vozidlo</th>
-                <th>Datum</th>
-            </tr>
-
-            {% for operace in operace4 %}
-                <tr>
-                    <td>{{ operace.user.username }}</td>
-                    <td>{{ operace.stav }}</td>
-                    <td>{{ operace.druh_sluzby.nazev }}</td>
-                    <td>{{ operace.vozidlo.nazev_vozidla }}</td>
-                    <td>{{ operace.datum }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
-
-    <div class="prvni_tabulka">
-    <h2 style="text-align: center">Dokončené v termínu</h2>
-        <table>
-            <tr>
-                <th>Uzivatel</th>
-                <th>Stav</th>
-                <th>Typ</th>
-                <th>Vozidlo</th>
-                <th>Datum</th>
-            </tr>
-
-            {% for operace in operace5 %}
-                <tr>
-                    <td>{{ operace.user.username }}</td>
-                    <td>{{ operace.stav }}</td>
-                    <td>{{ operace.druh_sluzby.nazev }}</td>
-                    <td>{{ operace.vozidlo.nazev_vozidla }}</td>
-                    <td>{{ operace.datum }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
-
-
-
-
-
-
-
-
-    {% endif %}
-
-    
-</div>  
-    
-</body>
+            <!-- Dokončené v termínu -->
+            <div class="page-header" style="margin-top: 2rem;">
+                <h2 class="page-title">Dokončené v termínu</h2>
+            </div>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Uživatel</th>
+                            <th>Stav</th>
+                            <th>Typ</th>
+                            <th>Vozidlo</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for operace in operace5 %}
+                            <tr>
+                                <td>{{ operace.user.username }}</td>
+                                <td>{{ operace.stav }}</td>
+                                <td>{{ operace.druh_sluzby.nazev }}</td>
+                                <td>{{ operace.vozidlo.nazev_vozidla }}</td>
+                                <td>{{ operace.datum }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>  
 {% endblock %}

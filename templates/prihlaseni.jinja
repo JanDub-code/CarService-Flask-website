@@ -1,19 +1,26 @@
 {% extends '__main.jinja' %}
 
 {% block content %}
-<body class="body_p">
-    <div class="input-container_p">
-        <form class="form-container_p" method="POST" action="/">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Obrázek" class="image_p">
-            <div>
-                <label class="label_p" for="jmeno">Jméno</label>
-                <input type="text" id="jmeno" name="jmeno" class="rounded-input_p"><br><br>
-                <label class="label_p" for="heslo">Heslo</label>
-                <input type="password" id="heslo" name="heslo" class="rounded-input_p"><br><br>
-                <input type="submit" value="Přihlásit se" class="rounded-button_p"><br><br>
-                <a href="registrace" class="register-link_p">Zaregistrujte se</a>
+<div class="auth-page">
+    <div class="auth-container">
+        <div class="auth-header">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Autoservis Logo" class="auth-logo">
+            <h2>Přihlášení</h2>
+        </div>
+        <form class="auth-form" method="POST" action="/">
+            <div class="form-group">
+                <label for="jmeno">Jméno</label>
+                <input type="text" id="jmeno" name="jmeno" required placeholder="Zadejte své jméno">
+            </div>
+            <div class="form-group">
+                <label for="heslo">Heslo</label>
+                <input type="password" id="heslo" name="heslo" required placeholder="Zadejte své heslo">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Přihlásit se</button>
+            <div class="auth-footer">
+                <p>Nemáte účet? <a href="registrace">Zaregistrujte se</a></p>
             </div>
         </form>
-    </div>    
-</body>
+    </div>
+</div>
 {% endblock %}

@@ -1,45 +1,39 @@
 {% extends '__main.jinja' %}
 
-    
-
 {% block content %}
-    <div class="full_calendar">
     {% include '__menu.jinja' %}
-    <div class="content">
-    <span class="main-border">
-    <div class="form-container">
-        <form id="form1" method="POST" action="{{ url_for('planovani_kalendar.pridani') }}">
-            <label for="datum">Vyber datum:</label>
-            <input type="date" id="datum" name="datum" class="border"><br>
-            
-            <label for="sluzba">Vyber službu:</label>
-            <select id="sluzba" name="sluzba" class="select_sluzba">
-                {% for druh_sluzby in druhy_sluzeb %}
-                <option value="{{ druh_sluzby.id_druhu_sluzby }}">{{ druh_sluzby.nazev }}</option>
-                {% endfor %}
-            </select><br>
-            
-            <label for="vozidlo">Vyber vozidlo:</label>
-                <select id="vozidlo" name="vozidlo" class="select_vozidlo">
-                    {% for auto in vozidla %}
-                        <option value="{{ auto.id_vozidla }}">{{ auto.nazev_vozidla }} | SPZ : {{ auto.spz }}</option>
-                    {% endfor %}
-                </select><br>
-            
-            <br>
-
-            <input class="form1-button green-button" type="submit" name="pridej" value="Přidej novou operaci"><br>
-        </form>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Plánování a kalendář</h1>
+        </div>
         
-    
-    </div>
-    
-    
-    
-    
-    
-    </span>
-    </div>
-    
+        <div class="auth-container" style="max-width: 600px; margin: 0 auto;">
+            <form id="form1" method="POST" action="{{ url_for('planovani_kalendar.pridani') }}">
+                <div class="form-group">
+                    <label for="datum">Vyber datum:</label>
+                    <input type="date" id="datum" name="datum" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sluzba">Vyber službu:</label>
+                    <select id="sluzba" name="sluzba" style="width: 100%; padding: 0.75rem; background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary);">
+                        {% for druh_sluzby in druhy_sluzeb %}
+                        <option value="{{ druh_sluzby.id_druhu_sluzby }}">{{ druh_sluzby.nazev }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vozidlo">Vyber vozidlo:</label>
+                    <select id="vozidlo" name="vozidlo" style="width: 100%; padding: 0.75rem; background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary);">
+                        {% for auto in vozidla %}
+                            <option value="{{ auto.id_vozidla }}">{{ auto.nazev_vozidla }} | SPZ : {{ auto.spz }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button class="btn btn-primary btn-full" type="submit" name="pridej">Přidej novou operaci</button>
+            </form>
+        </div>
     </div>
 {% endblock %}

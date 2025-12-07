@@ -1,23 +1,34 @@
 {% extends '__main.jinja' %}
 
 {% block content %}
-<body class="body_p">
-    <div class="input-container_p">
-        <form class="form-container_p" method="POST" action="/registrace">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Obrázek" class="image_p">
-            <div>
-                <label class="label_p" for="jmeno">Jméno</label>
-                <input type="text" id="jmeno" class="rounded-input_p" name="jmeno"><br><br>
-                <label class="label_p" for="email">Email</label>
-                <input type="email" id="email" class="rounded-input_p" name="email"><br><br>
-                <label class="label_p" for="telefon">Telefon</label>
-                <input type="tel" id="telefon" class="rounded-input_p" name="telefon"><br><br>
-                <label class="label_p" for="heslo">Heslo</label>
-                <input type="password" id="heslo" class="rounded-input_p" name="heslo"><br><br>
-                <input type="submit" value="Zaregistrovat se" class="rounded-button_p"><br><br>
-                <a href="/" class="register-link_p">Přihlášení</a>
+<div class="auth-page">
+    <div class="auth-container">
+        <div class="auth-header">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Autoservis Logo" class="auth-logo">
+            <h2>Registrace</h2>
+        </div>
+        <form class="auth-form" method="POST" action="/registrace">
+            <div class="form-group">
+                <label for="jmeno">Jméno</label>
+                <input type="text" id="jmeno" name="jmeno" required placeholder="Vaše jméno">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="vas@email.cz">
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon</label>
+                <input type="tel" id="telefon" name="telefon" required placeholder="+420 123 456 789">
+            </div>
+            <div class="form-group">
+                <label for="heslo">Heslo</label>
+                <input type="password" id="heslo" name="heslo" required placeholder="Zvolte si heslo">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Zaregistrovat se</button>
+            <div class="auth-footer">
+                <p>Již máte účet? <a href="/">Přihlaste se</a></p>
             </div>
         </form>
     </div>
-</body>
+</div>
 {% endblock %}

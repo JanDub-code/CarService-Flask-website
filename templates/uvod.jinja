@@ -1,33 +1,30 @@
 {% extends '__main.jinja' %}
-
-    
-
 {% block content %}
-<body>
-
-<div class="full_uvod">
     {% include '__menu.jinja' %}
-
     
-  
-    <div class="content_uvod">
-    
-    <h1>VÍTEJTE V NAŠEM AUTOSERVISU</h1>
-    
-    Naše uživatelská správa je navržena tak, aby vám poskytla pohodlné a efektivní způsoby, jak spravovat a udržovat vaše vozidla. Bez ohledu na vaši roli - buďte to administrátor, manažer oddělení, technik nebo zákazník - naše aplikace vám nabízí různé funkce, které vám pomohou s vašimi potřebami a požadavky.<br><br>
-<b>Pro administrátory:</b> <br>
-Máte plný přístup ke všem funkcím aplikace, včetně správy uživatelů, rolí a jejich oprávnění. Jste v kontrolě a můžete provádět všechny potřebné úpravy a nastavení.<br><br>
-<b>Pro manažery oddělení:</b><br>
-Získáváte přístup k relevantním oddělením (technická kontrola, servis, likvidace) a můžete spravovat záznamy, plány a zdroje přiřazené k těmto oddělením. To vám umožňuje účinně řídit a monitorovat provoz ve vašem oddělení.<br><br>
-<b>Pro techniky:</b><br>
-Můžete zaznamenávat výsledky technické kontroly a provedené servisní práce, a to pouze pro vozidla, která jsou vám přiřazena. To vám usnadňuje sledování a správu práce na vozidlech.<br><br>
-<b>Pro zákazníky:</b><br>
-Naše aplikace vám dává možnost sledovat stav svých vozidel, plánovat termíny technických kontrol a servisu. S naší aplikací zůstanete v kontaktu se stavem vašich vozidel a budete vědět, kdy je čas pro údržbu.<br><br>
-    
-    
-    </div>
-    </div>
-
-
-  </body>
+    <main class="hero-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{{ url_for('static', filename='images/background.jpg') }}');">
+        <div class="hero-content">
+            <h1 class="hero-title">Vítejte v našem autoservisu</h1>
+            <p class="hero-subtitle">Profesionální péče o vaše vozidlo na jednom místě.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Pro administrátory</h3>
+                    <p>Kompletní správa uživatelů, rolí a oprávnění. Mějte vše pod kontrolou.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pro manažery</h3>
+                    <p>Efektivní řízení oddělení, plánování zdrojů a monitoring provozu.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pro techniky</h3>
+                    <p>Snadný záznam servisních úkonů a přehled přidělené práce.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pro zákazníky</h3>
+                    <p>Sledujte stav opravy online a plánujte termíny servisu z pohodlí domova.</p>
+                </div>
+            </div>
+        </div>
+    </main>
 {% endblock %}

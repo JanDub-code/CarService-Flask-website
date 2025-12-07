@@ -1,51 +1,53 @@
 {% extends '__main.jinja' %}
 
-    
-
 {% block content %}
-<body>
-
-    <div class="full_sprava_uzivatelu">
     {% include '__menu.jinja' %}
-
-    <form id="form_sprava_uzivatelu" action="{{ url_for('sprava_uzivatele.update') }}" method="POST">
-        <div class="content_sprava_uz">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Jméno uživatele</th>
-                        <th>Role</th>
-                        <th>Aktuální role</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for user in users %}
-                    <tr>
-                        <td>{{ user.username }}</td>
-                        <td>
-                        <select id="moznosti_{{ user.id }}" name="roles[]">
-                            <option value="1" {% if user.role_name == "Administrátor boss" %}selected{% endif %}>Administrátor boss</option>
-                            <option value="6" {% if user.role_name == "Technik servisu" %}selected{% endif %}>Technik servisu</option>
-                            <option value="7" {% if user.role_name == "Technik likvidace" %}selected{% endif %}>Technik likvidace</option>
-                            <option value="5" {% if user.role_name == "Technik technické kontroly" %}selected{% endif %}>Technik technické kontroly</option>
-                            <option value="3" {% if user.role_name == "Manažer servisu" %}selected{% endif %}>Manažer servisu</option>
-                            <option value="4" {% if user.role_name == "Manažer likvidace vraků" %}selected{% endif %}>Manažer likvidace</option>
-                            <option value="2" {% if user.role_name == "Manažer technické kontroly" %}selected{% endif %}>Manažer technické kontroly</option>
-                            <option value="8" {% if user.role_name == "Zákazník" %}selected{% endif %}>Zákazník</option>
-                        </select>
-                        </td>
-                        <td>
-                            {{ user.role_name }}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <button type="submit" class="uziv_button">Potvrdit změny</button>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Správa uživatelů</h1>
         </div>
-    </form>
+
+        <form id="form_sprava_uzivatelu" action="{{ url_for('sprava_uzivatele.update') }}" method="POST">
+            <div class="auth-container" style="width: 100%; max-width: none;">
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Jméno uživatele</th>
+                                <th>Role</th>
+                                <th>Aktuální role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user.username }}</td>
+                                <td>
+                                <select id="moznosti_{{ user.id }}" name="roles[]" style="padding: 0.5rem; border-radius: var(--radius-sm); background-color: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color);">
+                                    <option value="1" {% if user.role_name == "Administrátor boss" %}selected{% endif %}>Administrátor boss</option>
+                                    <option value="6" {% if user.role_name == "Technik servisu" %}selected{% endif %}>Technik servisu</option>
+                                    <option value="7" {% if user.role_name == "Technik likvidace" %}selected{% endif %}>Technik likvidace</option>
+                                    <option value="5" {% if user.role_name == "Technik technické kontroly" %}selected{% endif %}>Technik technické kontroly</option>
+                                    <option value="3" {% if user.role_name == "Manažer servisu" %}selected{% endif %}>Manažer servisu</option>
+                                    <option value="4" {% if user.role_name == "Manažer likvidace vraků" %}selected{% endif %}>Manažer likvidace</option>
+                                    <option value="2" {% if user.role_name == "Manažer technické kontroly" %}selected{% endif %}>Manažer technické kontroly</option>
+                                    <option value="8" {% if user.role_name == "Zákazník" %}selected{% endif %}>Zákazník</option>
+                                </select>
+                                </td>
+                                <td>
+                                    {{ user.role_name }}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-top: 1.5rem; text-align: right;">
+                    <button type="submit" class="btn btn-primary">Potvrdit změny</button>
+                </div>
+            </div>
+        </form>
     </div>
-    </body>
 {% endblock %}
     
     

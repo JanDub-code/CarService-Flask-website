@@ -1,459 +1,352 @@
+/* 
+   Modern Car Service Design 
+   Theme: Dark Premium
+   Colors: Dark Grey, Emerald Green, White
+*/
 
-/* menu */
-               .header {
-            /*display: flex;*/
-            justify-content: right;
-            position: relative;
-            padding: 10px;
-            justify-content: center;
-            align-items: center;
-        }
- 
-        .image {
-            width: 200px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
- 
-        .menu ul {
-            list-style: none;
-            /*display: flex;*/
-            margin: 0;
-            padding: 0;
-            border: 2px solid darkgreen;
-            border-radius: 20px; 
-            background-color: lightgreen;
-            }
- 
-        .menu ul li {
-            margin-right: 20px;
-            padding: 10px; 
-        }
-        
-        @media screen and (min-width: 800px) {
-            .menu {
-                width: 80%; 
-                margin: auto;
-            }
-        
-            .menu ul {
-                list-style-type: none;
-                padding: 0;
-                text-align: center;
-            }
-        
-            .menu ul li {
-                margin-right: 20px;
-                padding: 10px; 
-                display: inline-block;
-            }
-        }
-        
-        /* kalendar*/
-        
-        
-        .content {
-        width: 50%;
-        margin: 0 auto;
-        padding: 5px;
-        border-radius: 20px; 
-        }
-        
-    .full_calendar{
-    width: 1000px;
-    margin: 0 auto;
-    background-color: #bdbdbd;
-    justify-content: center;
-    align-items: center;
-    flex:1;
-}  
-  
-        body {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-            /*background-color: #bdbdbd; */
-            
-        }
-  
-        form {
-            text-align: center;
-        }
-        .pridej_vozidlo_form,
-        .filtr_vypisu,
-        .form-container,
-        .prehled_kalendare{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: lightgreen;
-            border-radius: 20px;
-            margin-bottom: 30px; 
-            border: 2px solid darkgreen;
-        }
-        /*
-               .prehled_kalendare{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-            border: 2px solid darkgreen;
-            border-radius: 20px; 
-            background-color: white;
-        }
-        */
-        /*
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 2px solid darkgreen;
-            background-color: white;
-            border-radius: 20px;
-            margin-bottom: 30px;
-        }
-        */
-        .form1-button {
-            margin-bottom: 20px; 
-        }
-        .form2-button {
-            margin-bottom: 20px; 
-        }
-        .spacer {
-            margin: 20px 0;
-        }
-       
-        .green-button {
-            background-color: green;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 20px; 
-        }
-        
-        .border {
-            border: 2px solid green;
-            border-radius: 20px; 
-            padding: 5px;
-            margin: 10px
-        }
-       
-        .select_sluzba {
-            background-color: white;
-            color: black;
-            border: none;
-            border-radius: 20px; 
-            padding: 5px;
-        }
-       
-        
-        /* sprava uzivatelu */
-        
-        .content_sprava_uz {
-            width: 500px;
-            margin: 0 auto;
-             border: 2px solid green;
-            padding: 5px;
-          border-radius: 20px; 
-          justify-content: center;
-          align-items: center;  
-          background-color: lightgreen;
-          margin-bottom: 5%; 
-          
-      }
-      
-      .full_sprava_uzivatelu{
-    width: 1000px;
-    margin: 0 auto;
-    background-color: #bdbdbd;
-    justify-content: center;
-    align-items: center;
-    flex:1;
-}  
-
-
-      
-
-        .vstup {
-            border-radius: 20px;
-        }
-        
-        table {
-            border-collapse: separate;
-            border-spacing: 10px; 
-        }
-        th, td {
-            padding: 10px; 
-            text-align: center;
-            
-        }
-        th {
-            /*color: green;
-            border: 2px solid green;*/
-            border-radius: 20px;
-        }
-  
-        .uziv_button {
-            background-color: green;
-            border: 2px solid green;
-            border-radius: 20px; 
-            color: white;
-            padding: 10px 20px;
-            margin-top: 20px; 
-        }
-        
-        /* správa vozidel */
-        
-  
-    .full_sprava_vozidel{
-    width: 1000px;
-    margin: 0 auto;
-    background-color: #bdbdbd;
-    justify-content: center;
-    align-items: center;
-    flex:1;
-}  
-
-        .content_sprava_vozidel {
-        width: 900px;
-        margin: 0 auto;
-        background-color:white;
-        margin-bottom: 10%;
-  }
-  
-  .uprav_button {
-    background-color: green; 
-  }
-  
-  .nazev_input,
-  select {
-    background-color: white;
-    border: 2px solid green;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
-    margin-bottom: 30px;
-  }
-
-  .label {
-    display: block;
-    text-align: center;
-    margin: 10px;
-  }
-
-  .label-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .zaznamy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .pridej_vozidlo,
-  .pridej_button {
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .vstup_vozidlo {
-    width: 50%;
-    margin: 1% auto 0;
-    border: 2px solid green;
-    padding: 5px;
-    border-radius: 20px;
-    background-color: lightgreen;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-    margin-bottom: 50px;
-  }
-
-  .vstup_vozidlo input {
-    margin-bottom: 10px; 
-  }
-
-  .pridej_button {
-    align-self: center; 
-  }
-  
-  .label-group1,
-  .label-group2,
-  .label-group3{
-    width: 50%;
-    margin: 0 auto;
-    border: 2px solid green;
-    padding: 5px;
-    border-radius: 20px; 
-    margin: 5%;
+:root {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --accent-primary: #10b981; /* Emerald 500 */
+    --accent-hover: #059669; /* Emerald 600 */
+    --border-color: #3f3f46;
+    --error: #ef4444;
+    --success: #10b981;
     
-  }
-  
-  /* stav  */
-  
-    .content_stav {
-width: 700px;
-margin: 0 auto;
-/*border: 2px solid green;*/
-padding: 5px;
-border-radius: 20px; 
-justify-content: center;
-align-items: center;   
-flex:1;
-background-color:#bdbdbd;  
-    }
+    --font-main: 'Inter', sans-serif;
     
-        .full_stav{
-    width: 1000px;
-    margin: 0 auto;
-    background-color: #bdbdbd;
-    justify-content: center;
-    align-items: center;
-    flex:1;
-}  
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
     
-    
-    .prvni_tabulka{
-      background-color: lightgreen;
-      border-radius: 20px; 
-      margin-bottom: 30px;
-      border: 2px solid green;
-    }
-    
-    .druha_tabulka{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: lightgreen;
-      border-radius: 20px;
-      margin-bottom: 30px; 
-      border: 2px solid green;
-      /*justify-content: center;*/
-        }
-        
-    .filtruj_sluzby_button,
-    .najdi_uzivatele_button{
-        background-color: white;
-        color: black;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        border-radius: 20px; 
-        margin-bottom: 30px; 
-    }
-    
-    /* statistiky */
-    
-    
-    .content_statistiky {
-width: 500px;
-margin: 0 auto;
-/*border: 5px solid green;*/
-padding: 5px;
-border-radius: 20px; 
-justify-content: center;
-align-items: center; 
-background-color:lightgreen;
-border: 2px solid green;
-margin-bottom: 30%;  
-margin-top: 200px;   
-        }
-        
-        .full_statistiky{
-width: 1000px;
-margin: 0 auto;
-background-color: #bdbdbd;
-justify-content: center;
-align-items: center;
-flex:1;
-}  
-        
-        /* uvod */      
-        
-.content_uvod {
-width: 980px;
-margin: 0 auto;
-margin-top: 80px;
-margin-bottom: 10%;
-padding: 10px;
-border-radius: 20px;
-justify-content: center;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
 
-align-items: center;
-background-color: lightgreen;
-  }
-  
-  .full_uvod{
-width: 1000px;
-margin: 0 auto;
-background-color: white;
-justify-content: center;
-align-items: center;
-}  
-  
-
-  /* ZDE SE NACHÁZÍ STYLES PRO PŘIHLÁŠENÍ A REGISTRACE */
-
-  .body_p {
-    background-image: url('/static/images/background1.jpg');
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-    height: 100vh;
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
 }
-.input-container_p {
-    text-align: center;
-    border: 2px solid green; 
-    border-radius: 20px;
-    padding: 20px;
-    background-color: white;
-}
-.rounded-button_p {
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.label_p {
-    font-size: 16px;
-    margin-bottom: 10px; 
-}
-.rounded-input_p {
-    border: 1px solid green; 
-    border-radius: 20px;
-    padding: 10px;
-    font-size: 16px;
-}
-.image_p {
-    width: 200px;
-    vertical-align: middle;
-}
-.form-container_p {
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Layout */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Navigation */
+.main-header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: var(--shadow-md);
+}
+
+.logo-container .logo {
+    height: 40px;
+    width: auto;
+    border-radius: var(--radius-sm);
+}
+
+.main-nav .nav-list {
+    display: flex;
+    gap: 1.5rem;
     align-items: center;
 }
-.register-link_p {
-    color: green;
-    text-decoration: none; 
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+}
+
+.nav-link.logout-btn {
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+.nav-link.logout-btn:hover {
+    background-color: var(--error);
+    color: white;
+}
+
+/* Hero Section */
+.hero-section {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    background-color: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+}
+
+.feature-card h3 {
+    color: var(--accent-primary);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Auth Pages (Login/Register) */
+.auth-page {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-container {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo {
+    height: 60px;
+    width: auto;
+    margin: 0 auto 1rem;
+    border-radius: var(--radius-md);
+}
+
+.auth-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: none;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.auth-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.auth-footer a {
+    color: var(--accent-primary);
+    font-weight: 500;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Utility Classes for other templates if needed */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    font-weight: 600;
+    color: var(--text-secondary);
+    background-color: var(--bg-tertiary);
+}
+
+tr:hover {
+    background-color: var(--bg-tertiary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .main-nav .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
 }
